@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
 
+const dashboardcontroller = require('./controllers/dashboardcontroller');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
@@ -47,10 +48,10 @@ app.get('/dashboard', (req, res) => {
 
 
 
-  app.use('/auth', authController);
-  app.use(isSignedIn);
-  app.use('/users/:userId/dashboard', dashboardController)
-  
-  app.listen(port, () => {
-    console.log(`The express app is ready on port ${port}!`);
-  });
+//app.use('/auth', authController);
+app.use(isSignedIn);
+app.use('/users/:userId/dashboard', dashboardcontroller)
+
+app.listen(port, () => {
+  console.log(`The express app is ready on port ${port}!`);
+});

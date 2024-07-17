@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-const budgetGoalSchema = new Schema({
+const budgetGoalSchema = new mongoose.Schema({
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
@@ -37,7 +37,7 @@ const budgetGoalSchema = new Schema({
     },
 });
 
-const expenseSchema = new Schema({
+const expenseSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -61,7 +61,7 @@ const expenseSchema = new Schema({
     },
 });
   
-const transactionSchema = new Schema({
+const transactionSchema = new mongoose.Schema({
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
