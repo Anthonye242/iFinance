@@ -96,3 +96,5 @@ const Expense = mongoose.model('Expense', expenseSchema);
 const BudgetGoal = mongoose.model('BudgetGoal', budgetGoalSchema);
 
 module.exports = { User, Transaction, Expense, BudgetGoal };
+
+//Added ref:'User' to create a relationship between them to link every transaction expense and budget with a specific user.

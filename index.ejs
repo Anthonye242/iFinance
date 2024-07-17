@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Finance Tracker</title>
+</head>
+<body>
+  <img src="https://i.imgur.com/yOWswGa.jpg" alt="Finance Image" class="welcome-image">
+    <% if (user) { %>
+    <h1>Welcome to iFinance <%= user.username %>!</h1>
+    <a href="/auth/sign-out">Sign out</a>
+    <% } else { %>
+    <h1>Welcome to iFinance</h1>
+    <p>A all in one Finances Tracker</p>
+    <a href="/auth/sign-up">Sign up</a> or
+    <a href="/auth/sign-in">Sign in</a>.
+    <% } %>
+</body>
+</html>
